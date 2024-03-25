@@ -141,7 +141,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 5% 10%;
-  justify-content: space-evenly;
+  justify-content: safe space-evenly;
   overflow-y: scroll;
 }
 
