@@ -4,4 +4,12 @@ import handleLocationSearchForm from './searchFormHandler';
 
 handleLocationSearchForm();
 
-console.log(await getWeatherIn('Lafayette'));
+
+getWeatherIn('Lafayette')
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
