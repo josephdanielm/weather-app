@@ -1,5 +1,5 @@
 export default {
-    base: "/REPONAME/",
+    base: "weather-app",
   plugins: [],
   resolve: {
     alias: [
