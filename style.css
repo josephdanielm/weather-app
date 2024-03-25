@@ -272,17 +272,6 @@ body {
   justify-content: space-evenly;
 }
 
-#displayConditionBar {
-  background-color: #ffffff;
-  height: 2dvh;
-  width: 4rem;
-  height: 4rem;
-  border-radius: 10px;
-  display: flex;
-  justify-content: safe center;
-  align-items: center;
-}
-
 .isDay {
   background-color: #668cd6;
 }
