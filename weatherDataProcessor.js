@@ -8,16 +8,21 @@ export default async function processWeatherData(data) {
     const forecastTomorrow = forecastData[1];
     const forecastOvermorrow = forecastData[2];
 
+    function convertToStandardTime(militaryTime) {
+    const [hours, minutes] = militaryTime.split(':');
+    return `${(hours % 12) || 12}:${minutes} ${hours >= 12 ? 'PM' : 'AM'}`;
+    }
+
     return {
         location: {
             name: locationData.name,
             region: locationData.region,
             country: locationData.country,
-            localtime: (locationData.localtime).slice(-10)
+            localtime: convertToStandardTime((locationData.localtime).slice(-5))
         },
         current: {
-            temp_f: `${currentData.temp_f} F`,
-            temp_c: `${currentData.temp_c} C`,
+            temp_f: `${Math.round(currentData.temp_f)} F`,
+            temp_c: `${Math.round(currentData.temp_c)} C`,
             is_day: currentData.is_day,
             condition: currentData.condition,
             wind_mph: `${currentData.wind_mph} mph`,
@@ -32,46 +37,46 @@ export default async function processWeatherData(data) {
         forecast: {
             today: {
                 date: (forecastToday.date).slice(-5),
-                maxtemp_c: `Max: ${forecastToday.day.maxtemp_c} C`,
-                maxtemp_f: `Max: ${forecastToday.day.maxtemp_f} F`,
-                mintemp_c: `Min: ${forecastToday.day.mintemp_c} C`,
-                mintemp_f: `Min: ${forecastToday.day.mintemp_f} F`,
-                avgtemp_c: `Avg: ${forecastToday.day.avgtemp_c} C`,
-                avgtemp_f: `Avg: ${forecastToday.day.avgtemp_f} F`,
+                maxtemp_c: `Max:\n ${Math.round(forecastToday.day.maxtemp_c)} C`,
+                maxtemp_f: `Max:\n ${Math.round(forecastToday.day.maxtemp_f)} F`,
+                mintemp_c: `Min:\n ${Math.round(forecastToday.day.mintemp_c)} C`,
+                mintemp_f: `Min:\n ${Math.round(forecastToday.day.mintemp_f)} F`,
+                avgtemp_c: `Avg:\n ${Math.round(forecastToday.day.avgtemp_c)} C`,
+                avgtemp_f: `Avg:\n ${Math.round(forecastToday.day.avgtemp_f)} F`,
                 maxwind_mph: forecastToday.day.maxwind_mph,
                 totalprecip_in: forecastToday.day.totalprecip_in,
                 avghumidity: forecastToday.day.avghumidity,
-                chanceofrain: `${forecastToday.day.daily_chance_of_rain}% CoR`,
+                chanceofrain: `${forecastToday.day.daily_chance_of_rain}%\nCoR`,
                 condition: forecastToday.day.condition,
                 uv: forecastToday.day.uv
             },
             tomorrow: {
                 date: (forecastTomorrow.date).slice(-5),
-                maxtemp_c: `Max: ${forecastTomorrow.day.maxtemp_c} C`,
-                maxtemp_f: `Max: ${forecastTomorrow.day.maxtemp_f} F`,
-                mintemp_c: `Min: ${forecastTomorrow.day.mintemp_c} C`,
-                mintemp_f: `Min: ${forecastTomorrow.day.mintemp_f} F`,
-                avgtemp_c: `Avg: ${forecastTomorrow.day.avgtemp_c} C`,
-                avgtemp_f: `Avg: ${forecastTomorrow.day.avgtemp_f} F`,
+                maxtemp_c: `Max:\n ${Math.round(forecastTomorrow.day.maxtemp_c)} C`,
+                maxtemp_f: `Max:\n ${Math.round(forecastTomorrow.day.maxtemp_f)} F`,
+                mintemp_c: `Min:\n ${Math.round(forecastTomorrow.day.mintemp_c)} C`,
+                mintemp_f: `Min:\n ${Math.round(forecastTomorrow.day.mintemp_f)} F`,
+                avgtemp_c: `Avg:\n ${Math.round(forecastTomorrow.day.avgtemp_c)} C`,
+                avgtemp_f: `Avg:\n ${Math.round(forecastTomorrow.day.avgtemp_f)} F`,
                 maxwind_mph: forecastTomorrow.day.maxwind_mph,
                 totalprecip_in: forecastTomorrow.day.totalprecip_in,
                 avghumidity: forecastTomorrow.day.avghumidity,
-                chanceofrain: `${forecastTomorrow.day.daily_chance_of_rain}% CoR`,
+                chanceofrain: `${forecastTomorrow.day.daily_chance_of_rain}%\nCoR`,
                 condition: forecastTomorrow.day.condition,
                 uv: forecastTomorrow.day.uv
             },
             overmorrow: {
                 date: (forecastOvermorrow.date).slice(-5),
-                maxtemp_c: `Max: ${forecastOvermorrow.day.maxtemp_c} C`,
-                maxtemp_f: `Max: ${forecastOvermorrow.day.maxtemp_f} F`,
-                mintemp_c: `Min: ${forecastOvermorrow.day.mintemp_c} C`,
-                mintemp_f: `Min: ${forecastOvermorrow.day.mintemp_f} F`,
-                avgtemp_c: `Avg: ${forecastOvermorrow.day.avgtemp_c} C`,
-                avgtemp_f: `Avg: ${forecastOvermorrow.day.avgtemp_f} F`,
+                maxtemp_c: `Max:\n ${Math.round(forecastOvermorrow.day.maxtemp_c)} C`,
+                maxtemp_f: `Max:\n ${Math.round(forecastOvermorrow.day.maxtemp_f)} F`,
+                mintemp_c: `Min:\n ${Math.round(forecastOvermorrow.day.mintemp_c)} C`,
+                mintemp_f: `Min:\n ${Math.round(forecastOvermorrow.day.mintemp_f)} F`,
+                avgtemp_c: `Avg:\n ${Math.round(forecastOvermorrow.day.avgtemp_c)} C`,
+                avgtemp_f: `Avg:\n ${Math.round(forecastOvermorrow.day.avgtemp_f)} F`,
                 maxwind_mph: forecastOvermorrow.day.maxwind_mph,
                 totalprecip_in: forecastOvermorrow.day.totalprecip_in,
                 avghumidity: forecastOvermorrow.day.avghumidity,
-                chanceofrain: `${forecastOvermorrow.day.daily_chance_of_rain}% CoR`,
+                chanceofrain: `${forecastOvermorrow.day.daily_chance_of_rain}%\nCoR`,
                 condition: forecastOvermorrow.day.condition,
                 uv: forecastOvermorrow.day.uv
             }

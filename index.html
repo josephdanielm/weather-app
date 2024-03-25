@@ -36,51 +36,82 @@
     <div id="appDisplay">
 
       <div id="currentCard">
-        <div id="currentName"></div>
-        <div id="currentRegion"></div>
-        <div id="currentCountry"></div>
-        <div id="currentTime"></div>
-        <div id="currentCondition"></div>
-        <div class="tempF" id="currentTempF"></div>
-        <div class="tempC" id="currentTempC"></div>
-        <div id="currentWindDirection"></div>
-        <div id="currentWindMPH"></div>
-        <div id="currentInchesRain"></div>
+        <div id="locationInfo">
+          <div id="currentName"></div>
+          <div id="currentRegion"></div>
+          <div id="currentCountry"></div>
+        </div>
+        <div id="conditionInfo">
+          <div id="currentTime"></div>
+          <div id="currentCondition"></div>
+          <div class="tempF" id="currentTempF"></div>
+          <div class="tempC" id="currentTempC"></div>
+        </div>
+
+        <div id="windRainInfo">
+          <div id="windInfo">
+            <div id="currentWindDirection"></div>
+            <div id="currentWindMPH"></div>
+          </div>
+          <div id="currentInchesRain"></div>
+        </div>
+
       </div>
 
       <div id="forecastWrapper">
         <div class="forecastCard" id="forecastTodayCard">
-          <div id="todayDate"></div>
-          <div id="todayCondition"></div>
-          <div class="tempF" id="todayMinTempF"></div>
-          <div class="tempC" id="todayMinTempC"></div>
-          <div class="tempF" id="todayAvgTempF"></div>
-          <div class="tempC" id="todayAvgTempC"></div>
-          <div class="tempF" id="todayMaxTempF"></div>
-          <div class="tempC" id="todayMaxTempC"></div>
-          <div id="todayChanceOfRain"></div>
+          <div id="dateConditionWrapper">
+            <div id="todayDate"></div>
+            <div id="todayCondition"></div>
+          </div>
+          <div id="tempsCoRWrapper">
+            <div id="tempsWrapper">
+              <div class="tempF" id="todayMinTempF"></div>
+              <div class="tempC" id="todayMinTempC"></div>
+              <div class="tempF" id="todayAvgTempF"></div>
+              <div class="tempC" id="todayAvgTempC"></div>
+              <div class="tempF" id="todayMaxTempF"></div>
+              <div class="tempC" id="todayMaxTempC"></div>
+            </div>
+            <div id="todayChanceOfRain"></div>
+          </div>
+        
         </div>
         <div class="forecastCard" id="forecastTomorrowCard">
-          <div id="tomorrowDate"></div>
-          <div id="tomorrowCondition"></div>
-          <div class="tempF" id="tomorrowMinTempF"></div>
-          <div class="tempC" id="tomorrowMinTempC"></div>
-          <div class="tempF" id="tomorrowAvgTempF"></div>
-          <div class="tempC" id="tomorrowAvgTempC"></div>
-          <div class="tempF" id="tomorrowMaxTempF"></div>
-          <div class="tempC" id="tomorrowMaxTempC"></div>
-          <div id="tomorrowChanceOfRain"></div>
+          <div id="dateConditionWrapper">
+            <div id="tomorrowDate"></div>
+            <div id="tomorrowCondition"></div>
+          </div>
+
+          <div id="tempsCoRWrapper">
+            <div id="tempsWrapper">
+              <div class="tempF" id="tomorrowMinTempF"></div>
+              <div class="tempC" id="tomorrowMinTempC"></div>
+              <div class="tempF" id="tomorrowAvgTempF"></div>
+              <div class="tempC" id="tomorrowAvgTempC"></div>
+              <div class="tempF" id="tomorrowMaxTempF"></div>
+              <div class="tempC" id="tomorrowMaxTempC"></div>
+            </div>
+            <div id="tomorrowChanceOfRain"></div>
+          </div>
+        
         </div>
         <div class="forecastCard" id="forecastOvermorrowCard">
-          <div id="overmorrowDate"></div>
-          <div id="overmorrowCondition"></div>
-          <div class="tempF" id="overmorrowMinTempF"></div>
-          <div class="tempC" id="overmorrowMinTempC"></div>
-          <div class="tempF" id="overmorrowAvgTempF"></div>
-          <div class="tempC" id="overmorrowAvgTempC"></div>
-          <div class="tempF" id="overmorrowMaxTempF"></div>
-          <div class="tempC" id="overmorrowMaxTempC"></div>
-          <div id="overmorrowChanceOfRain"></div>
+          <div id="dateConditionWrapper">
+            <div id="overmorrowDate"></div>
+            <div id="overmorrowCondition"></div>
+          </div>
+          <div id="tempsCoRWrapper">
+            <div id="tempsWrapper">
+              <div class="tempF" id="overmorrowMinTempF"></div>
+              <div class="tempC" id="overmorrowMinTempC"></div>
+              <div class="tempF" id="overmorrowAvgTempF"></div>
+              <div class="tempC" id="overmorrowAvgTempC"></div>
+              <div class="tempF" id="overmorrowMaxTempF"></div>
+              <div class="tempC" id="overmorrowMaxTempC"></div>
+            </div>
+            <div id="overmorrowChanceOfRain"></div>
+          </div>
         </div>
       </div>
     </div>

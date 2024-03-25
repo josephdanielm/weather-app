@@ -35,7 +35,7 @@ img {
 }
 
 :root {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   background-color: #1a1a1a;
   color: white;
 }
@@ -51,10 +51,9 @@ body {
   height: 20dvh;
 }
 
-
 #locationSearchForm {
   position: relative;
-  top:50%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.5s;
@@ -76,7 +75,7 @@ body {
 }
 
 #locationSearchInput {
-  font-family: 'Manrope';
+  font-family: "Manrope";
   position: absolute;
   top: 0;
   left: 0;
@@ -98,7 +97,7 @@ body {
 
 #locationSearchForm:hover .fa-magnifying-glass {
   background: #223355;
-  color: #DCECFF;
+  color: #dcecff;
 }
 
 #submitButton {
@@ -106,7 +105,7 @@ body {
 }
 
 .fa-github {
-  color: #4e89ff;
+  color: #87d1ff;
 }
 
 #infoBar {
@@ -123,7 +122,7 @@ body {
 }
 
 .fa-magnifying-glass {
-  color: #162A53;
+  color: #162a53;
   padding: 10px;
   width: 42.5px;
   height: 42.5px;
@@ -140,64 +139,161 @@ body {
   height: 80dvh;
   display: flex;
   flex-direction: column;
-  padding: 5% 10%;
-  justify-content: safe space-evenly;
-  overflow-y: scroll;
+  padding: 10px 40px;
+  gap: 1rem;
 }
 
 #currentCard {
   box-shadow: 0px 0px 20px 2px #0d1b2a;
   border-radius: 10px;
   background-color: #778da9;
-  padding: 5%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  justify-content: space-around;
-  align-content: space-around;
-  gap: 0.5rem;
-  grid-template-areas: 
-  "currentName currentName currentTemp currentTime"
-  "currentRegion . . ."
-  "currentCountry . . ."
-  "currentCountry . currentInchesRain currentInchesRain"
-  "currentCondition . currentWindMPH currentWindDirection"
-  "currentCondition . . ."
-  ;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+#currentName {
+  order: 1;
+  font-size: 26px;
+  font-weight: 600;
+  color: #0a2647;
+  width: 100%;
+  line-height: 30px;
+}
+
+#currentName::after {
+  content: ",";
+}
+
+#currentRegion {
+  order: 2;
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: 800;
+  color: #284d96;
+  width: 100%;
+}
+
+#currentRegion::after {
+  content: ",";
+}
+
+#currentCountry {
+  order: 3;
+  font-size: 20px;
+  font-weight: 800;
+  color: #253658;
+}
+
+#conditionInfo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#windRainInfo {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#windInfo {
+  display: flex;
+  gap: 5px;
+}
+
+#currentTime {
+  order: 3;
+  font-weight: 700;
+  color: #003cb3;
+}
+
+#currentCondition {
+  order: 2;
+  font-weight: 800;
+}
+
+#currentTempF,
+#currentTempC {
+  order: 1;
+  color: #87d1ff;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+#currentWindMPH {
+  order: 1;
+}
+
+#currentWindDirection {
+  order: 2;
+}
+
+#currentInchesRain {
 }
 
 #forecastWrapper {
   display: flex;
   flex-direction: column;
-  padding: 5%;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .forecastCard {
   flex: none;
   box-shadow: 0px 0px 20px 2px #0d1b2a;
   border-radius: 10px;
-  padding: 5%;
+  padding: 10px 15px;
   height: 125px;
   width: auto;
-  display: grid;
-  grid-template-columns: repeat(4, 50px);
-  justify-content: space-evenly;
-  align-content: space-evenly;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "todayDate todayCondition todayCondition todayCondition"
-    ". . . ."
-    "todayCOR todayMinTemp todayAvgTemp todayMaxTemp"
-    "todayCOR todayMinTemp todayAvgTemp todayMaxTemp";
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
+#dateConditionWrapper {
+  width: 100%;
+}
+
+#tempsWrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  width: 150px;
+}
+
+#tempsWrapper div {
+  width: fit-content;
+}
+
+#todayChanceOfRain,
+#tomorrowChanceOfRain,
+#overmorrowChanceOfRain {
+  order: 99;
+}
+
+#tempsCoRWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+#todayDate::before {
+  content: "Today, ";
+}
+
+#tomorrowDate::before {
+  content: "Tomorrow, ";
+}
+
+#overmorrowDate::before {
+  content: "Overmorrow, ";
+}
 
 #todayDate,
 #tomorrowDate,
 #overmorrowDate {
-  grid-area: todayDate;
   font-weight: 800;
   color: #ffffff;
 }
@@ -205,7 +301,8 @@ body {
 #todayCondition,
 #tomorrowCondition,
 #overmorrowCondition {
-  grid-area: todayCondition;
+  font-weight: 800;
+  color: #87d1ff;
 }
 
 #todayMinTempF,
@@ -214,7 +311,6 @@ body {
 #tomorrowMinTempC,
 #overmorrowMinTempF,
 #overmorrowMinTempC {
-  grid-area: todayMinTemp;
   font-weight: 600;
   color: #041e52;
 }
@@ -225,7 +321,6 @@ body {
 #tomorrowAvgTempC,
 #overmorrowAvgTempF,
 #overmorrowAvgTempC {
-  grid-area: todayAvgTemp;
   font-weight: 600;
   color: #eef0fb;
 }
@@ -236,17 +331,9 @@ body {
 #tomorrowMaxTempC,
 #overmorrowMaxTempF,
 #overmorrowMaxTempC {
-  grid-area: todayMaxTemp;
   font-weight: 600;
   color: #b1cbff;
 }
-
-#todayChanceOfRain,
-#tomorrowChanceOfRain,
-#overmorrowChanceOfRain {
-  grid-area: todayCOR;
-}
-
 
 #loadSquare {
   height: 75px;
@@ -261,8 +348,12 @@ body {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 #infoWrapper {
@@ -282,7 +373,7 @@ body {
 
 #tempWrapper {
   cursor: pointer;
-  background-color: #DCECFF;
+  background-color: #87d1ff;
   color: #0d1b2a;
   padding: 0.5em 0.75em;
   border-radius: 100%;
@@ -297,64 +388,6 @@ body {
   bottom: 0;
   display: none;
 }
-
-
-#currentName {
-  font-size: 1.4em;
-  font-weight: 800;
-  color: #0a2647;
-  grid-area: currentName;
-}
-
-#currentRegion {
- font-size: 1em;
- font-weight: 700;
- color: #284d96;
- grid-area: currentRegion;
-}
-
-#currentCountry {
-  font-size: 0.8em;
-  font-weight: 600;
-  color: #14171d;
-  grid-area: currentCountry;
-}
-
-#currentTime {
-  font-weight: 700;
-  color: #003cb3;
-  grid-area: currentTime;
-}
-
-#currentCondition {
-  grid-area: currentCondition;
-  font-weight: 400;
-}
-
-#currentTempF,
-#currentTempC {
-  grid-area: currentTemp;
-  color: #9abcff;
-  font-size: 1.4rem;
-  font-weight: 800;
-}
-
-#currentWindDirection {
-  grid-area: currentWindDirection;
-}
-
-#currentWindMPH {
-  grid-area: currentWindMPH;
-}
-
-#currentInchesRain {
-  grid-area: currentInchesRain;
-}
-
-
-
-
-
 
 .background {
   position: absolute;
@@ -378,7 +411,7 @@ body {
 }
 
 .background div:nth-child(1) {
-  background: linear-gradient(132deg, #778da9 0.00%, #778da9 100.00%);
+  background: linear-gradient(132deg, #778da9 0%, #778da9 100%);
   width: 61%;
   padding-top: 61%;
   left: 64%;
@@ -387,7 +420,7 @@ body {
 }
 
 .background div:nth-child(2) {
-  background: linear-gradient(10deg, #778da9 0.00%, #e0e1dd 100.00%);
+  background: linear-gradient(10deg, #778da9 0%, #e0e1dd 100%);
   width: 53%;
   padding-top: 53%;
   left: 73%;
@@ -396,7 +429,7 @@ body {
 }
 
 .background div:nth-child(3) {
-  background: linear-gradient(100deg, #415a77 0.00%, #0d1b2a 100.00%);
+  background: linear-gradient(100deg, #415a77 0%, #0d1b2a 100%);
   width: 150%;
   padding-top: 150%;
   left: 68%;
@@ -405,7 +438,7 @@ body {
 }
 
 .background div:nth-child(4) {
-  background: linear-gradient(100deg, #415a77 0.00%, #1b263b 100.00%);
+  background: linear-gradient(100deg, #415a77 0%, #1b263b 100%);
   width: 150%;
   padding-top: 150%;
   left: 91%;
