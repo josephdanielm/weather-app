@@ -7,6 +7,9 @@ export default function handleLocationSearchForm() {
     locationSearchForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
+        locationSearchInput.blur();
+        locationSearchForm.blur();
+
         const searchedLocation = locationSearchInput.value;
         locationSearchInput.value = '';
 

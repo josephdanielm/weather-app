@@ -13,3 +13,6 @@ getWeatherIn('Lafayette')
         console.log(err);
     });
 
+document.getElementById('locationSearchForm').addEventListener('click', () => {
+    document.getElementById('locationSearchInput').focus();
+});
