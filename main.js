@@ -1,6 +1,7 @@
 import './style.css';
 import getWeatherIn from './weatherInCityFetcher';
 import handleLocationSearchForm from './searchFormHandler';
+import toggleFarenCel from './tempConvert';
 
 handleLocationSearchForm();
 
@@ -16,3 +17,6 @@ getWeatherIn('Lafayette')
 document.getElementById('locationSearchForm').addEventListener('click', () => {
     document.getElementById('locationSearchInput').focus();
 });
+
+toggleFarenCel();
+document.getElementById('tempWrapper').addEventListener('click', toggleFarenCel);

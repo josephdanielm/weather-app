@@ -1,28 +1,86 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="manifest" href="./dist/site.webmanifest" />
     <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
   </head>
   <body>
-<div class="background">
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
+    <div class="background">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
     <div id="formWrapper">
+      <div id="infoBar">
+        <div id="title">Weather App</div>
+        <div>josephdanielm | <a href="https://github.com/josephdanielm" target="_blank"> <i class="fa-brands fa-github"></i></a></div>
+      </div>
       <form id="locationSearchForm">
         <label id="searchLabel" for="locationSearchInput">Search for a city:</label>
         <input id="locationSearchInput" type="text" />
         <i class="fa-solid fa-magnifying-glass"></i>
       </form>
     </div>
-
+    <div id="tempWrapper">
+      <i class="fa-solid fa-f tempF"></i>
+      <i class="fa-solid fa-c tempC"></i>
+    </div>
+    <div id="loadingOverlay"><div id="loadSquare"></div></div>
     <div id="appDisplay">
-      
+
+      <div id="currentCard">
+        <div id="currentName"></div>
+        <div id="currentRegion"></div>
+        <div id="currentCountry"></div>
+        <div id="currentTime"></div>
+        <div id="currentCondition"></div>
+        <div class="tempF" id="currentTempF"></div>
+        <div class="tempC" id="currentTempC"></div>
+        <div id="currentWindDirection"></div>
+        <div id="currentWindMPH"></div>
+        <div id="currentInchesRain"></div>
+      </div>
+
+      <div id="forecastWrapper">
+        <div class="forecastCard" id="forecastTodayCard">
+          <div id="todayDate"></div>
+          <div id="todayCondition"></div>
+          <div class="tempF" id="todayMinTempF"></div>
+          <div class="tempC" id="todayMinTempC"></div>
+          <div class="tempF" id="todayAvgTempF"></div>
+          <div class="tempC" id="todayAvgTempC"></div>
+          <div class="tempF" id="todayMaxTempF"></div>
+          <div class="tempC" id="todayMaxTempC"></div>
+          <div id="todayChanceOfRain"></div>
+        </div>
+        <div class="forecastCard" id="forecastTomorrowCard">
+          <div id="tomorrowDate"></div>
+          <div id="tomorrowCondition"></div>
+          <div class="tempF" id="tomorrowMinTempF"></div>
+          <div class="tempC" id="tomorrowMinTempC"></div>
+          <div class="tempF" id="tomorrowAvgTempF"></div>
+          <div class="tempC" id="tomorrowAvgTempC"></div>
+          <div class="tempF" id="tomorrowMaxTempF"></div>
+          <div class="tempC" id="tomorrowMaxTempC"></div>
+          <div id="tomorrowChanceOfRain"></div>
+        </div>
+        <div class="forecastCard" id="forecastOvermorrowCard">
+          <div id="overmorrowDate"></div>
+          <div id="overmorrowCondition"></div>
+          <div class="tempF" id="overmorrowMinTempF"></div>
+          <div class="tempC" id="overmorrowMinTempC"></div>
+          <div class="tempF" id="overmorrowAvgTempF"></div>
+          <div class="tempC" id="overmorrowAvgTempC"></div>
+          <div class="tempF" id="overmorrowMaxTempF"></div>
+          <div class="tempC" id="overmorrowMaxTempC"></div>
+          <div id="overmorrowChanceOfRain"></div>
+        </div>
+      </div>
     </div>
 
     

@@ -48,7 +48,7 @@ body {
 
 #formWrapper {
   background-color: transparent;
-  height: 10dvh;
+  height: 20dvh;
 }
 
 
@@ -105,6 +105,23 @@ body {
   display: none;
 }
 
+.fa-github {
+  color: #4e89ff;
+}
+
+#infoBar {
+  background-color: #0d1b2a;
+  padding: 0.4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
 .fa-magnifying-glass {
   color: #162A53;
   padding: 10px;
@@ -120,10 +137,206 @@ body {
 }
 
 #appDisplay {
-  height: 90dvh;
+  height: 80dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 5% 10%;
+  justify-content: space-evenly;
+  overflow-y: scroll;
+}
+
+#currentCard {
+  box-shadow: 0px 0px 20px 2px #0d1b2a;
+  border-radius: 10px;
+  background-color: #778da9;
+  padding: 5%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  justify-content: space-around;
+  align-content: space-around;
+  gap: 0.5rem;
+  grid-template-areas: 
+  "currentName currentName currentTemp currentTime"
+  "currentRegion . . ."
+  "currentCountry . . ."
+  "currentCountry . currentInchesRain currentInchesRain"
+  "currentCondition . currentWindMPH currentWindDirection"
+  "currentCondition . . ."
+  ;
+}
+
+#forecastWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  gap: 10px;
+}
+
+.forecastCard {
+  flex: none;
+  box-shadow: 0px 0px 20px 2px #0d1b2a;
+  border-radius: 10px;
+  padding: 5%;
+  height: 125px;
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+  justify-content: space-evenly;
+  align-content: space-evenly;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "todayDate todayCondition todayCondition todayCondition"
+    ". . . ."
+    "todayCOR todayMinTemp todayAvgTemp todayMaxTemp"
+    "todayCOR todayMinTemp todayAvgTemp todayMaxTemp";
 }
 
 
+#todayDate,
+#tomorrowDate,
+#overmorrowDate {
+  grid-area: todayDate;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+#todayCondition,
+#tomorrowCondition,
+#overmorrowCondition {
+  grid-area: todayCondition;
+}
+
+#todayMinTempF,
+#todayMinTempC,
+#tomorrowMinTempF,
+#tomorrowMinTempC,
+#overmorrowMinTempF,
+#overmorrowMinTempC {
+  grid-area: todayMinTemp;
+  font-weight: 600;
+  color: #041e52;
+}
+
+#todayAvgTempF,
+#todayAvgTempC,
+#tomorrowAvgTempF,
+#tomorrowAvgTempC,
+#overmorrowAvgTempF,
+#overmorrowAvgTempC {
+  grid-area: todayAvgTemp;
+  font-weight: 600;
+  color: #eef0fb;
+}
+
+#todayMaxTempF,
+#todayMaxTempC,
+#tomorrowMaxTempF,
+#tomorrowMaxTempC,
+#overmorrowMaxTempF,
+#overmorrowMaxTempC {
+  grid-area: todayMaxTemp;
+  font-weight: 600;
+  color: #b1cbff;
+}
+
+#todayChanceOfRain,
+#tomorrowChanceOfRain,
+#overmorrowChanceOfRain {
+  grid-area: todayCOR;
+}
+
+
+#loadSquare {
+  height: 75px;
+  width: 75px;
+  border: 6px solid #ccc;
+  border-right-color: #4e89ff;
+  position: relative;
+  top: 45%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+#tempWrapper {
+  align-self: center;
+  cursor: pointer;
+  background-color: #DCECFF;
+  color: #0d1b2a;
+  padding: 0.5em 0.75em;
+  border-radius: 100%;
+}
+
+#loadingOverlay {
+  z-index: 999;
+  background-color: hsla(208, 87%, 3%, 0.857);
+  position: absolute;
+  width: 100dvw;
+  height: 100dvh;
+  bottom: 0;
+  display: none;
+}
+
+
+#currentName {
+  font-size: 1.4em;
+  font-weight: 800;
+  color: #0a2647;
+  grid-area: currentName;
+}
+
+#currentRegion {
+ font-size: 1em;
+ font-weight: 700;
+ color: #284d96;
+ grid-area: currentRegion;
+}
+
+#currentCountry {
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #14171d;
+  grid-area: currentCountry;
+}
+
+#currentTime {
+  font-weight: 700;
+  color: #003cb3;
+  grid-area: currentTime;
+}
+
+#currentCondition {
+  grid-area: currentCondition;
+  font-weight: 400;
+}
+
+#currentTempF,
+#currentTempC {
+  grid-area: currentTemp;
+  color: #9abcff;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+#currentWindDirection {
+  grid-area: currentWindDirection;
+}
+
+#currentWindMPH {
+  grid-area: currentWindMPH;
+}
+
+#currentInchesRain {
+  grid-area: currentInchesRain;
+}
 
 
 
