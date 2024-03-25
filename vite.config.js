@@ -1,5 +1,5 @@
 export default {
-    base: "weather-app",
+    base: "/weather-app/",
   plugins: [],
   resolve: {
     alias: [
