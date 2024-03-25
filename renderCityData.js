@@ -15,6 +15,7 @@ export default async function renderCityData(cityName, weatherDataObject) {
     const currentWindDirection = document.getElementById('currentWindDirection');
     const currentWindMPH = document.getElementById('currentWindMPH');
     const currentInchesRain = document.getElementById('currentInchesRain');
+    const currentIsDay = document.getElementById('displayConditionBar');
 
     const todayDate = document.getElementById('todayDate');
     const todayCondition = document.getElementById('todayCondition');
@@ -57,6 +58,18 @@ export default async function renderCityData(cityName, weatherDataObject) {
     currentWindDirection.innerText = weatherData.current.wind_dir;
     currentWindMPH.innerText = weatherData.current.wind_mph;
     currentInchesRain.innerText = weatherData.current.precip_in;
+    if (weatherData.current.is_day === 0) {
+        if (currentIsDay.classList.contains('isDay')) {
+            currentIsDay.classList.remove('isDay')
+        }
+        currentIsDay.classList.add('isNight');
+    } else {
+        if (currentIsDay.classList.contains('isNight')) {
+            currentIsDay.classList.remove('isNight')
+        }
+        currentIsDay.classList.add('isDay');
+
+    }
     
 
     todayDate.innerText = weatherData.forecast.today.date;

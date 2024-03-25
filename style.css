@@ -265,9 +265,33 @@ body {
   100% { transform: rotate(360deg); }
 }
 
+#infoWrapper {
+  display: flex;
+  padding: 0.4rem 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#displayConditionBar {
+  background-color: #ffffff;
+  height: 2dvh;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.isDay {
+  background-color: #668cd6;
+}
+
+.isNight {
+  background-color: #0e1f41;
+}
 
 #tempWrapper {
-  align-self: center;
   cursor: pointer;
   background-color: #DCECFF;
   color: #0d1b2a;
